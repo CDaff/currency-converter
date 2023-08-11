@@ -9,8 +9,8 @@ function App() {
 
   const [currencyOptions, setCurrencyOptions] = useState([])
   // console.log(currencyOptions) --testing currency option array was correctly pulled
-  const [fromCurrency, setFromCurrency] = useState([]);
-  const [toCurrency, setToCurrency] = useState([]);
+  const [fromCurrency, setFromCurrency] = useState();
+  const [toCurrency, setToCurrency] = useState();
 
   useEffect(() =>{
     fetch(BASE_URL)
@@ -28,12 +28,12 @@ function App() {
       <h1>Currency Calculator: Convert</h1>
       <CurrencyRow
         currencyOptions={currencyOptions}
-        selectCurrency={fromCurrency}
+        selectedCurrency={fromCurrency}
       />
       <div className="equals">=</div>
       <CurrencyRow
         currencyOptions={currencyOptions}
-        selectCurrency={toCurrency}
+        selectedCurrency={toCurrency}
       />
     </>
   );
