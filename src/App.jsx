@@ -27,13 +27,15 @@ function App() {
     <>
       <h1>Currency Calculator: Convert</h1>
       <CurrencyRow
-        currencyOptions={currencyOptions}
-        selectedCurrency={fromCurrency}
+        currencyOptions = {currencyOptions}
+        selectedCurrency = {fromCurrency}
+        onChangeCurrency = {e => setFromCurrency(e.target.value)}
       />
       <div className="equals">=</div>
       <CurrencyRow
-        currencyOptions={currencyOptions}
-        selectedCurrency={toCurrency}
+        currencyOptions = {currencyOptions}
+        selectedCurrency = {toCurrency}
+        onChangeCurrency = {e => setToCurrency(e.target.value)}
       />
     </>
   );
